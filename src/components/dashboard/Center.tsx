@@ -5,12 +5,15 @@ import Suggestion from './Suggestion'
 
 const Center = () => {
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col w-full bg-[#18191b] px-6'>
         <Navigation/>
+    
+
         <Banner/>
+      
         <Suggestion/>
     </div>
   )
 }
 
-export default Center
+export default Center 
