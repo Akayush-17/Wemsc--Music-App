@@ -6,19 +6,19 @@ import homeicon from "../../../public/home-2-svgrepo-com.svg";
 
 const Sidebar = () => {
   return (
-    <div className="bg-[#101011] h-full w-full py-10 px-6 pb-10 ">
+    <div className="bg-[#101011] h-full w-full py-8 px-6 pb-10 ">
       <div className="flex justify-between items-center">
         <Image src={logo} className="h-10 w-10" alt="logo" />
         <div>
           <Image src={menu} alt="menu" />
         </div>
       </div>
-      <div className="mt-8">
+      <div className="mt-6">
         <div>
-          <h4 className="uppercase text-gray-400 font-semibold text-xs py-2">
+          <h4 className="uppercase text-gray-400 font-semibold text-xs py-1">
             Features
           </h4>
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-2">
             <div className="group w-full gap-4 flex items-center">
               <Image
                 src={homeicon}
@@ -51,11 +51,11 @@ const Sidebar = () => {
             </div>
           </div>
         </div>
-        <div className="mt-8">
+        <div className="mt-6">
           <h4 className="uppercase text-gray-400 font-semibold text-xs mt-2 my-2">
             Library
           </h4>
-          <div className="flex flex-col gap-3 whitespace-nowrap">
+          <div className="flex flex-col gap-2 whitespace-nowrap">
             <div className="group w-full gap-4 flex items-center">
               <Image
                 src={homeicon}
