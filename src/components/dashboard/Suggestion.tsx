@@ -5,8 +5,8 @@ import song from "../../../public/1_hAaRg1su8VZxpGTXPTrKSg.png"
 
 const Suggestion = () => {
   return (
-    <div className="mt-4 overflow-scroll no-scrollbar overflow-x-hidden">
-      <div className="h-[440px]">
+    <div className="mt-6 pb-10">
+      <div className="">
         <div>
         <div className="flex justify-between items-end">
           <h1 className="text-white text-2xl font-bold">Hello, Woilon</h1>

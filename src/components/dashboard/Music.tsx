@@ -7,7 +7,7 @@ import CurrentSong from './CurrentSong'
 
 const Music = () => {
   return (
-    <div className='flex relative h-screen flex-col justify-center items-center w-screen'>
+    <div className='flex relative h-full flex-col justify-center items-center w-screen'>
 
     <div className='flex flex-row w-full'>
       <div className='flex w-[20%] flex-col'>

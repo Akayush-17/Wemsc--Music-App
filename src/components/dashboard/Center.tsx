@@ -7,11 +7,17 @@ const Center = () => {
   return (
     <div className='flex flex-col w-full bg-[#18191b] px-6'>
         <Navigation/>
+        <div className='overflow-scroll no-scrollbar overflow-x-hidden'>
+
+        <div className='h-[665px]'>
+
     
 
         <Banner/>
       
         <Suggestion/>
+        </div>
+        </div>
     </div>
   )
 }
