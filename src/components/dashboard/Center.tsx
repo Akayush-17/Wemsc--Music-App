@@ -9,7 +9,7 @@ const Center = () => {
         <Navigation/>
         <div className='overflow-scroll no-scrollbar overflow-x-hidden'>
 
-        <div className='h-[665px]'>
+        <div className='h-[660px]'>
 
     
 

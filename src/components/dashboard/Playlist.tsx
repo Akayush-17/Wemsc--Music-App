@@ -3,7 +3,7 @@ import Image from "next/image";
 import profile from "../../../public/austin-neill-hgo1wfpxl3i-unsplash.jpg";
 import notification from "../../../public/notification-svgrepo-com.svg";
 import downarrow from "../../../public/down-arrow-5-svgrepo-com (1).svg";
-import playlist from "../../../public/playlistsong.png";
+import playlist from "../../../public/1546.png";
 const Playlist = () => {
   return (
     <div className="bg-[#0a0a0a] h-full w-full py-8 px-6 pb-10">

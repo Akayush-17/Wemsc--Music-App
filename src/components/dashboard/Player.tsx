@@ -1,17 +1,33 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import shuffle from "../../../public/shuffle-2-svgrepo-com.svg";
+import previous from "../../../public/previous-svgrepo-com.svg";
+import next from "../../../public/next-svgrepo-com (1).svg";
+import loop from "../../../public/loop-svgrepo-com.svg";
+import Play from "../../../public/play-circle-svgrepo-com.svg";
+import pause from "../../../public/pause-circle-svgrepo-com.svg";
+import device from "../../../public/device-multiple-svgrepo-com.svg"
+import share from "../../../public/share-svgrepo-com.svg"
+
+import Image from "next/image";
 
 const Player = () => {
+  const [play, setplay] = useState(false);
+
+  const handleplaypause = () => {
+    setplay(!play);
+  };
   return (
-    <div className="text-white flex  w-screen min-h-[10vh]  bg-black">
-      <div className=" flex w-1/4">
+    <div className="text-white px-6 w-screen flex  py-6  bg-black">
+      <div className=" flex w-[20%] items-center gap-4">
         <div>
           <div> Date</div>
           <div>chin chowe</div>
         </div>
         <div>
           <svg
-            width="40px"
-            height="40px"
+            width="25px"
+            height="25px"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -24,8 +40,8 @@ const Player = () => {
         </div>
         <div>
           <svg
-            width="40px"
-            height="40px"
+            width="25px"
+            height="25px"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -45,16 +61,57 @@ const Player = () => {
           </svg>
         </div>
       </div>
-      <div className="w-1/2">
-        <div></div>
+      <div className="w-[60%]  ">
+        <div className=" flex flex-col">
+          <div className="flex justify-center gap-4">
+            <button>
+              <Image src={shuffle} alt="shuffle" />
+            </button>
+            <button>
+              <Image src={previous} alt="shuffle" />
+            </button>
+            {play ? (
+              <button onClick={handleplaypause}>
+                <Image src={Play} alt="shuffle" />
+              </button>
+            ) : (
+              <button onClick={handleplaypause}>
+                <Image src={pause} alt="shuffle" />
+              </button>
+            )}
+
+            <button>
+              <Image src={next} alt="shuffle" />
+            </button>
+            <button>
+              <Image src={loop} alt="shuffle" />
+            </button>
+          </div>
+          <div className="mx-16">
+            <div className="mx-8 py-1">
+              <div className="flex justify-between text-sm text-grey-darker">
+                <p>0:40</p>
+                <p>4:20</p>
+              </div>
+              <div className="">
+                <div className="h-1 w-full bg-neutral-200 dark:bg-neutral-600">
+                  <div
+                    className="h-1 bg-blue-500"
+                    style={{ width: "45%" }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div></div>
       </div>
-      <div className="w-1/4 flex">
-        <div className="flex">
+      <div className="w-[20%] flex items-center gap-4">
+        <div className="flex w-full items-center gap-2">
           <div>
             <svg
-              width="40px"
-              height="40px"
+              width="25px"
+              height="25px"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -68,12 +125,16 @@ const Player = () => {
               />
             </svg>
           </div>
-          <div></div>
+          
+            <div className="h-1 w-full bg-neutral-200 dark:bg-neutral-600">
+              <div className="h-1 bg-blue-500" style={{ width: "45%" }}></div>
+            </div>
+          
         </div>
         <div>
           <svg
-            width="40px"
-            height="40px"
+            width="25px"
+            height="25px"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -86,8 +147,8 @@ const Player = () => {
             />
           </svg>
         </div>
-        <div></div>
-        <div></div>
+        <div><Image src={device} alt="device"/></div>
+        <div><Image src={share} alt="device"/></div>
       </div>
     </div>
   );
