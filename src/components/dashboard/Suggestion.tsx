@@ -14,7 +14,7 @@ const Suggestion = () => {
         
       ];
   return (
-    <div className="mt-6 pb-20">
+    <div className="mt-6 pb-20 ">
       <div className="">
         <div>
         <div className="flex justify-between items-end">
@@ -25,7 +25,7 @@ const Suggestion = () => {
         </div>
         <div className="text-white overflow-x-auto w-full no-scrollbar flex gap-4">
   {musicData.map((music, index) => (
-    <div key={index} className="flex-shrink-0 w-52 "> {/* Adjust the width as needed */}
+    <div key={index} className="flex-shrink-0 md:w-52 w-40 "> 
       <MusicCard {...music} />
     </div>
   ))}
@@ -40,7 +40,7 @@ const Suggestion = () => {
         </div>
         <div className="text-white overflow-x-auto w-full no-scrollbar flex gap-4">
   {musicData.map((music, index) => (
-    <div key={index} className="flex-shrink-0 w-52 "> {/* Adjust the width as needed */}
+    <div key={index} className="flex-shrink-0 md:w-52 w-40 "> 
       <MusicCard {...music} />
     </div>
   ))}

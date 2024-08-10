@@ -5,7 +5,12 @@ import notification from "../../../public/notification-svgrepo-com.svg";
 import downarrow from "../../../public/down-arrow-5-svgrepo-com (1).svg";
 import playlist from "../../../public/1546.png";
 import MusicCard from "./MusicCard";
-const Playlist = () => {
+import right from '../../../public/right-2-svgrepo-com.svg'
+
+interface PlaylistProp {
+    handlePlaylistClick: () => void;
+  }
+  const Playlist: React.FC<PlaylistProp> = ({ handlePlaylistClick }) => {
   const recentlyPlayed = [
     {
       image: playlist,
@@ -45,13 +50,14 @@ const Playlist = () => {
     },
   ];
   return (
-    <div className="bg-[#0a0a0a] h-full w-full py-8 px-6 pb-10">
+    <div className={`bg-[#0a0a0a] h-screen w-full py-8 px-6 pb-10 `}>
       <div className="flex justify-between items-center">
         <Image src={profile} className="h-10 w-10 rounded-full" alt="logo" />
         <div>
           <div className="flex gap-2">
             <Image src={notification} alt="notification" />
             <Image src={downarrow} alt="arrow" />
+            <button className="md:hidden block" onClick={handlePlaylistClick}><Image src={right} alt="right"/></button>
           </div>
         </div>
       </div>
@@ -95,7 +101,7 @@ const Playlist = () => {
           ))}
           </div>
         </div>
-      <button className="bg-white rounded-xl font-extrabold px-6 py-2 flex justify-center text-center w-full mt-4">
+      <button className="bg-white rounded-xl font-extrabold px-6 py-2 flex justify-center text-center w-full mt-8">
         Create New Playlist
       </button>
     </div>

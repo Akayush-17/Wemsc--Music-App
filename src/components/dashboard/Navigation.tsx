@@ -3,13 +3,19 @@ import right from "../../../public/right-2-svgrepo-com.svg";
 import left from "../../../public/left-2-svgrepo-com.svg";
 import dots from "../../../public/dots-horizontal-svgrepo-com.svg"
 import Image from "next/image";
-const Navigation = () => {
+import menu from '../../../public/menu-alt-02-svgrepo-com.svg'
+
+interface PlaylistmenuProps {
+    handlePlaylistClick: () => void;
+    handleSidebarClick: () => void;
+  }
+  const Navigation: React.FC<PlaylistmenuProps> = ({ handlePlaylistClick, handleSidebarClick }) => {
   return (
     <div className="w-full flex mt-6 gap-6 justify-center items-center">
       <div className="w-1/8 flex gap-2 ">
-        <div>
+        <button onClick={handleSidebarClick}>
           <Image src={left} alt="left" />{" "}
-        </div>
+        </button>
         <div>
           {" "}
           <Image src={right} alt="left" />
@@ -19,7 +25,7 @@ const Navigation = () => {
         <div className="relative py-3  rounded-3xl w-full max-w-4xl">
           <input
             type="text"
-            className="rounded-3xl p-3 w-full"
+            className="rounded-3xl p-3 w-full placeholder:w-[80%] md:placeholder:w-full"
             placeholder="Search for artist, songs or albums"
           />
 
@@ -41,7 +47,8 @@ const Navigation = () => {
           </button>
         </div>
       </div>
-      <div className="w-1/8"> <Image src={dots} alt="menu"/> </div>
+      <button  className="w-1/8 md:block hidden"> <Image src={dots} alt="menu"/> </button>
+      <button  onClick={handlePlaylistClick} className="w-1/8 md:hidden block"><Image src={menu}  alt="menu"/>  </button>
     </div>
   );
 };
