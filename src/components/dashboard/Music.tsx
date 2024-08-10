@@ -45,7 +45,7 @@ const Music = () => {
         <CurrentSong />
       </div>
         </div>
-        <div className={` flex  ${open ? ' w-full md:w-[80%]' : ' w-full md:w-[60%]'}`}>
+        <div className={` flex h-screen ${open ? ' w-full md:w-[80%]' : ' w-full md:w-[60%]'}`}>
 
         <Center handleSidebarClick={handleSidebarClick} handlePlaylistClick={handlePlaylistClick}/>
         </div>

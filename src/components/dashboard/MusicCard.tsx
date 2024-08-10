@@ -2,7 +2,7 @@ import Image, { StaticImageData } from "next/image";
 import React from "react";
 
 interface MusicItemProps {
-  image: StaticImageData;
+  image: StaticImageData | string;
   title: string;
   artist: string;
   description?: string;
@@ -15,7 +15,7 @@ const MusicCard: React.FC<MusicItemProps> = ({ image, title, artist, description
         <div className={`flex ${timeAgo ? ' flex-row gap-2' : 'flex-col gap-2'}`}>
 
       <div className="rounded-lg">
-        <Image className={` aspect-square object-cover ${timeAgo ? 'h-10 w-10 rounded-sm':'rounded-xl'}`} src={image} alt={title} />
+        <Image className={` aspect-square object-cover ${timeAgo ? 'h-10 w-10 rounded-sm object-contain':'rounded-xl'}`} height={200} width={200} src={image} alt={title} />
       </div>
       <div className="flex flex-col">
 
