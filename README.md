@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Wemsc Music Player
+
+## Overview
+
+This project is built with Next.js, TailwindCSS, and TypeScript. The music application features a search function, playlist management, the ability to like and play music, and a clean, user-friendly UI.
+
+### Live Link
+
+https://wemsc-music-app.vercel.app/
+
+
+## Images
+<br>
+<img src="./public/readme/homepage.png" alt="Dashboard View"/>
+<br>
+<img src="./public/readme/search.png" alt="Profile View"/>
+<br>
+<img src="./public/readme/loading.png" alt="Chatbot Interface"/>
+<br>
+<img src="./public/readme/sidebarclosed.png" alt="Interactions List"/>
+<br>
+<img src="./public/readme/phome.png" alt="Dashboard View"/>
+<br>
+<img src="./public/readme/sidebar.png" alt="Profile View"/>
+<br>
+<img src="./public/readme/playlist.png" alt="Chatbot Interface"/>
+<br>
+<img src="./public/readme/homephone.png" alt="Interactions List"/>
+<br>
+<br>
+
+
+
+## Features
+
+### Music App:
+
+- View songs, search, and view details.
+- Responsive design
+- Play/Pause music
+- Like songs
+- Volume Control
+- Playlist 
+<br>
+
+## Future Improvement 
+
+- Using spotify API to fetch and play music using OAuth authentication token based authorization.
+
 
 ## Getting Started
 
-First, run the development server:
+Project Setup
+Clone the repository:
 
-```bash
+``` bash
+git clone https://github.com/Akayush-17/Wemsc--Music-App.git
+
+Install dependencies:
+
+npm install
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
