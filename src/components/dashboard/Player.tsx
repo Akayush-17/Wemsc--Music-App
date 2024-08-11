@@ -10,7 +10,7 @@ import device from "../../../public/device-multiple-svgrepo-com.svg";
 import share from "../../../public/share-svgrepo-com.svg";
 import speaker from '../../../public/speaker-2-svgrepo-com.svg'
 import mute from '../../../public/mute-svgrepo-com.svg'
-import heart from '../../../public/heart-svgrepo-com.svg'
+import heart from '../../../public/heart-svgrepo-com copy.svg'
 import like from '../../../public/heart-shine-svgrepo-com.svg'
 
 import Image from "next/image";
@@ -117,7 +117,7 @@ const Player = () => {
     return `${minutes}:${seconds}`;
   };
   return (
-    <div className="text-white px-6 w-screen flex  py-6  bg-black">
+    <div className="text-white px-6 w-screen flex items-center  py-6  bg-black">
       <audio ref={audioRef} src="/music/BYE.mp3" />
       <div className=" flex md:flex-row flex-col md:w-[20%] w-[5%] items-center gap-4  ">
         <div className="md:block hidden">
