@@ -8,8 +8,10 @@ import menu from '../../../public/menu-alt-02-svgrepo-com.svg'
 interface PlaylistmenuProps {
     handlePlaylistClick: () => void;
     handleSidebarClick: () => void;
+    searchQuery: string;
+    setSearchQuery: (query: string) => void;
   }
-  const Navigation: React.FC<PlaylistmenuProps> = ({ handlePlaylistClick, handleSidebarClick }) => {
+  const Navigation: React.FC<PlaylistmenuProps> = ({ handlePlaylistClick, handleSidebarClick, searchQuery, setSearchQuery }) => {
   return (
     <div className="w-full flex mt-6 gap-6 justify-center items-center">
       <div className="w-1/8 flex gap-2 ">
@@ -25,6 +27,8 @@ interface PlaylistmenuProps {
         <div className="relative py-3  rounded-3xl w-full max-w-4xl">
           <input
             type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
             className="rounded-3xl p-3 w-full placeholder:w-[80%] md:placeholder:w-full"
             placeholder="Search for artist, songs or albums"
           />

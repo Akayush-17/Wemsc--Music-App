@@ -19,8 +19,8 @@ const Player = () => {
   };
   return (
     <div className="text-white px-6 w-screen flex  py-6  bg-black">
-      <div className=" flex w-[20%] items-center gap-4">
-        <div>
+      <div className=" flex md:flex-row flex-col md:w-[20%] w-[5%] items-center gap-4  ">
+        <div className="md:block hidden">
           <div> Date</div>
           <div>chin chowe</div>
         </div>
@@ -38,7 +38,7 @@ const Player = () => {
             />
           </svg>
         </div>
-        <div>
+        <div className="md:block hidden">
           <svg
             width="25px"
             height="25px"
@@ -61,7 +61,7 @@ const Player = () => {
           </svg>
         </div>
       </div>
-      <div className="w-[60%]  ">
+      <div className="md:w-[60%] w-full  ">
         <div className=" flex flex-col">
           <div className="flex justify-center gap-4">
             <button>
@@ -87,7 +87,7 @@ const Player = () => {
               <Image src={loop} alt="shuffle" />
             </button>
           </div>
-          <div className="mx-16">
+          <div className="md:mx-16 mx-4">
             <div className="mx-8 py-1">
               <div className="flex justify-between text-sm text-grey-darker">
                 <p>0:40</p>
@@ -106,7 +106,7 @@ const Player = () => {
         </div>
         <div></div>
       </div>
-      <div className="w-[20%] flex items-center gap-4">
+      <div className="md:w-[20%] flex items-center gap-4 md:flex-row flex-col">
         <div className="flex w-full items-center gap-2">
           <div>
             <svg
@@ -131,7 +131,7 @@ const Player = () => {
             </div>
           
         </div>
-        <div>
+        <div className="md:block hidden">
           <svg
             width="25px"
             height="25px"
@@ -147,8 +147,8 @@ const Player = () => {
             />
           </svg>
         </div>
-        <div><Image src={device} alt="device"/></div>
-        <div><Image src={share} alt="device"/></div>
+        <div className="md:block hidden"><Image src={device} alt="device"/></div>
+        <div className="md:block hidden"><Image src={share} alt="device"/></div>
       </div>
     </div>
   );

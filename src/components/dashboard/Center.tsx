@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React,{useState} from 'react'
 import Navigation from './Navigation'
 import Banner from './Banner'
 import Suggestion from './Suggestion'
@@ -8,9 +9,11 @@ interface PlaylistProps {
 
 }
 const Center: React.FC<PlaylistProps> = ({ handlePlaylistClick, handleSidebarClick}) => {
+  const [searchQuery, setSearchQuery] = useState('');
   return (
     <div className='flex flex-col w-full bg-[#18191b] px-4 md:px-6'>
-        <Navigation handleSidebarClick={handleSidebarClick} handlePlaylistClick={handlePlaylistClick}/>
+        <Navigation searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery} handleSidebarClick={handleSidebarClick} handlePlaylistClick={handlePlaylistClick}/>
         <div className='overflow-scroll no-scrollbar overflow-x-hidden'>
 
         <div className='h-[80%]'>
@@ -19,7 +22,7 @@ const Center: React.FC<PlaylistProps> = ({ handlePlaylistClick, handleSidebarCli
 
         <Banner/>
       
-        <Suggestion/>
+        <Suggestion searchQuery={searchQuery}/>
         </div>
         </div>
     </div>

@@ -4,7 +4,11 @@ import song from '../../../public/1546.png'
 import MusicCard from "./MusicCard";
 import shivers from '../../../public/ed-sheeran-shivers-video.jpg'
 
-const Suggestion = () => {
+interface SuggestionProps {
+    searchQuery: string;
+  }
+
+  const Suggestion: React.FC<SuggestionProps> = ({ searchQuery }) => {
     const recentlyPlayed = [
         {
             image:
@@ -91,6 +95,12 @@ const Suggestion = () => {
     },
   ];
 
+  const allMusic = [...recentlyPlayed, ...musicData];
+
+ 
+  const filteredList = allMusic.filter((music) =>
+    music.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
   return (
     <div className="mt-6 pb-20 ">
       <div className="">
@@ -119,11 +129,62 @@ const Suggestion = () => {
               </button>
             </div>
             <div className="text-white overflow-x-auto w-full no-scrollbar flex gap-4">
-              {recentlyPlayed.map((music, index) => (
-                <div key={index} className="flex-shrink-0 md:w-52 w-40 ">
-                  <MusicCard {...music} />
-                </div>
-              ))}
+            {filteredList.map((music, index) => (
+            <div key={index} className="flex-shrink-0 md:w-52 w-40">
+              <MusicCard {...music} />
+            </div>
+          ))}
+            </div>
+          </div>
+          <div>
+            <div className="flex justify-between items-end">
+              <h1 className="text-white text-xl font-bold">
+                New releases for you
+              </h1>
+              <button className="text-gray-400 text-sm font-semibold">
+                See all
+              </button>
+            </div>
+            <div className="text-white overflow-x-auto w-full no-scrollbar flex gap-4">
+            {filteredList.map((music, index) => (
+            <div key={index} className="flex-shrink-0 md:w-52 w-40">
+              <MusicCard {...music} />
+            </div>
+          ))}
+            </div>
+          </div>
+          <div>
+            <div className="flex justify-between items-end">
+              <h1 className="text-white text-xl font-bold">
+                New releases for you
+              </h1>
+              <button className="text-gray-400 text-sm font-semibold">
+                See all
+              </button>
+            </div>
+            <div className="text-white overflow-x-auto w-full no-scrollbar flex gap-4">
+            {filteredList.map((music, index) => (
+            <div key={index} className="flex-shrink-0 md:w-52 w-40">
+              <MusicCard {...music} />
+            </div>
+          ))}
+            </div>
+          </div>
+          <div>
+            <div className="flex justify-between items-end">
+              <h1 className="text-white text-xl font-bold">
+                New releases for you
+              </h1>
+              <button className="text-gray-400 text-sm font-semibold">
+                See all
+              </button>
+            </div>
+            <div className="text-white overflow-x-auto w-full no-scrollbar flex gap-4">
+            {filteredList.map((music, index) => (
+            <div key={index} className="flex-shrink-0 md:w-52 w-40">
+              <MusicCard {...music} />
+            </div>
+          ))}
             </div>
           </div>
         </div>
