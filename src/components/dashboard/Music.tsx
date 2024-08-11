@@ -12,10 +12,16 @@ import logo from "../../../public/Untitled design (6).png";
 
 const Music = () => {
   const [open, setOpen] = useState(false);
+  const [play, setPlay] = useState(false);
   const [openPlaylist, setOpenPlaylist] = useState(false);
   const [openSidebar, setSidebar] = useState(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const [loading, setLoading] = useState(true);
+  
+
+  const handlePlay=()=>{
+    setPlay(!play)
+  }
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -39,7 +45,7 @@ const Music = () => {
     if (loading) {
       return (
         <div className="flex items-center justify-center h-screen w-screen bg-black">
-          <Image src={logo} className="animate-spin h-12 w-12" alt="Loading..." />
+          <Image src={logo} className=" animate-bounce h-12 w-12" alt="Loading..." />
         </div>
       );
     }
@@ -66,18 +72,18 @@ const Music = () => {
         </div>
         <div className={` flex h-screen ${open ? ' w-full md:w-[80%]' : ' w-full md:w-[60%]'}`}>
 
-        <Center handleSidebarClick={handleSidebarClick} handlePlaylistClick={handlePlaylistClick}/>
+        <Center handlePlay={handlePlay} handleSidebarClick={handleSidebarClick} handlePlaylistClick={handlePlaylistClick}/>
         </div>
         <div className={`md:block   ${openPlaylist ? ' w-full absolute top-0 right-0 z-50 block' : 'md:w-[20%] '}`}>
 
         <div className='flex '>
    
-        <Playlist handlePlaylistClick={handlePlaylistClick} />
+        <Playlist handlePlay={handlePlay} handlePlaylistClick={handlePlaylistClick} />
         </div>
         </div>
     </div>
 
-    <div className='absolute bottom-0'><Player/></div>
+    <div className='absolute bottom-0'><Player play={play}/></div>
     </div>
   )
 }

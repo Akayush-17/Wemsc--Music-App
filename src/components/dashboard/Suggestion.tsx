@@ -6,9 +6,10 @@ import shivers from '../../../public/ed-sheeran-shivers-video.jpg'
 
 interface SuggestionProps {
     searchQuery: string;
+    handlePlay:()=> void;
   }
 
-  const Suggestion: React.FC<SuggestionProps> = ({ searchQuery }) => {
+  const Suggestion: React.FC<SuggestionProps> = ({ searchQuery, handlePlay }) => {
     const recentlyPlayed = [
         {
             image:
@@ -114,7 +115,7 @@ interface SuggestionProps {
           <div className="text-white overflow-x-auto w-full no-scrollbar flex gap-4">
             {musicData.map((music, index) => (
               <div key={index} className="flex-shrink-0 md:w-52 w-40 ">
-                <MusicCard {...music} />
+                <MusicCard handlePlay={handlePlay} {...music} />
               </div>
             ))}
           </div>
@@ -131,7 +132,7 @@ interface SuggestionProps {
             <div className="text-white overflow-x-auto w-full no-scrollbar flex gap-4">
             {filteredList.map((music, index) => (
             <div key={index} className="flex-shrink-0 md:w-52 w-40">
-              <MusicCard {...music} />
+              <MusicCard handlePlay={handlePlay} {...music} />
             </div>
           ))}
             </div>
@@ -148,7 +149,7 @@ interface SuggestionProps {
             <div className="text-white overflow-x-auto w-full no-scrollbar flex gap-4">
             {filteredList.map((music, index) => (
             <div key={index} className="flex-shrink-0 md:w-52 w-40">
-              <MusicCard {...music} />
+              <MusicCard handlePlay={handlePlay} {...music} />
             </div>
           ))}
             </div>
@@ -165,7 +166,7 @@ interface SuggestionProps {
             <div className="text-white overflow-x-auto w-full no-scrollbar flex gap-4">
             {filteredList.map((music, index) => (
             <div key={index} className="flex-shrink-0 md:w-52 w-40">
-              <MusicCard {...music} />
+              <MusicCard handlePlay={handlePlay} {...music} />
             </div>
           ))}
             </div>
@@ -182,7 +183,7 @@ interface SuggestionProps {
             <div className="text-white overflow-x-auto w-full no-scrollbar flex gap-4">
             {filteredList.map((music, index) => (
             <div key={index} className="flex-shrink-0 md:w-52 w-40">
-              <MusicCard {...music} />
+              <MusicCard handlePlay={handlePlay} {...music} />
             </div>
           ))}
             </div>

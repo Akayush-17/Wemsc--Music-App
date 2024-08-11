@@ -14,8 +14,11 @@ import heart from '../../../public/heart-svgrepo-com copy.svg'
 import like from '../../../public/heart-shine-svgrepo-com.svg'
 
 import Image from "next/image";
+interface PlayerProps {
+    play:boolean
+}
 
-const Player = () => {
+const Player: React.FC<PlayerProps> = ({play}) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.2);
   const [currentTime, setCurrentTime] = useState(0);
@@ -79,6 +82,18 @@ const Player = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (play && audioRef.current && !isPlaying) {
+      audioRef.current.play().catch((error) => {
+        console.log("Error occurred while trying to play the audio:", error);
+      });
+      setIsPlaying(true);
+    } else if (!play && audioRef.current && isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    }
+  }, [play]); 
+
   const handlePlayPause = () => {
     if (audioRef.current) {
       if (isPlaying) {
@@ -92,6 +107,7 @@ const Player = () => {
     }
   };
 
+
   const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const volumeValue = parseFloat(e.target.value);
     setVolume(volumeValue);
@@ -99,6 +115,7 @@ const Player = () => {
       audioRef.current.volume = volumeValue;
     }
   };
+
 
   const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (audioRef.current && progressRef.current) {

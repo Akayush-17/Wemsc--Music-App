@@ -10,6 +10,7 @@ import shivers from "../../../public/ed-sheeran-shivers-video.jpg";
 
 interface PlaylistProp {
   handlePlaylistClick: () => void;
+  handlePlay:() => void;
 }
 
 const shuffleArray = <T,>(array: T[]): T[] => {
@@ -29,7 +30,7 @@ const shuffleArray = <T,>(array: T[]): T[] => {
   return array;
 };
 
-const Playlist: React.FC<PlaylistProp> = ({ handlePlaylistClick }) => {
+const Playlist: React.FC<PlaylistProp> = ({ handlePlaylistClick, handlePlay }) => {
   const recentlyPlayed = [
     {
       image:
@@ -102,6 +103,7 @@ const Playlist: React.FC<PlaylistProp> = ({ handlePlaylistClick }) => {
               title={item.title}
               artist={item.artist}
               timeAgo={item.timeAgo}
+              handlePlay={handlePlay}
             />
           ))}
         </div>
@@ -119,6 +121,7 @@ const Playlist: React.FC<PlaylistProp> = ({ handlePlaylistClick }) => {
               title={item.title}
               artist={item.artist}
               timeAgo={item.timeAgo}
+              handlePlay={handlePlay}
             />
           ))}
         </div>
