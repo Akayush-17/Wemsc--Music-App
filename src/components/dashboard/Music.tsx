@@ -50,7 +50,7 @@ const Music = () => {
       );
     }
   return (
-    <div className='flex relative h-screen flex-col   w-screen overflow-x-clip'>
+    <div className='flex relative h-screen flex-col overflow-y-hidden  w-screen overflow-x-clip'>
 
     <div className='flex flex-row w-full h-full'>
       <div className={` bg-[#101011] h-full md:block ${openSidebar ? ' w-full absolute top-0 right-0 z-50 block' : 'hidden'} ${open ? 'w-6': 'w-[20%]'}`}>
