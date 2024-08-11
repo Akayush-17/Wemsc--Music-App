@@ -77,7 +77,7 @@ const Playlist: React.FC<PlaylistProp> = ({ handlePlaylistClick, handlePlay }) =
   const shuffledRecentlyPlayed = shuffleArray([...recentlyPlayed]);
 
   return (
-    <div className={`bg-[#0a0a0a] h-screen w-full py-8 px-6 pb-10`}>
+    <div className={`bg-[#0a0a0a] h-screen w-full py-8 px-6 pb-10 `}>
       <div className="flex justify-between items-center">
         <Image src={profile} className="h-10 w-10 rounded-full" alt="logo" />
         <div>

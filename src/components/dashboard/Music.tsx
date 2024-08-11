@@ -53,7 +53,7 @@ const Music = () => {
     <div className='flex relative h-screen flex-col overflow-y-hidden  w-screen overflow-x-clip'>
 
     <div className='flex flex-row w-full h-full'>
-      <div className={` bg-[#101011] h-full md:block ${openSidebar ? ' w-full absolute top-0 right-0 z-50 block' : 'hidden'} ${open ? 'w-6': 'w-[20%]'}`}>
+      <div className={` bg-[#101011] h-full md:block transition-all duration-500 ease-in-out  ${openSidebar ? ' w-full absolute top-0 right-0 z-50 block' : 'hidden'} ${open ? 'w-6': 'w-[20%]'}`}>
 
       <div className={`flex flex-col h-full`}>
         <button  onMouseEnter={() => setIsHovered(true)}
@@ -70,11 +70,11 @@ const Music = () => {
         <CurrentSong />
       </div>
         </div>
-        <div className={` flex h-screen ${open ? ' w-full md:w-[80%]' : ' w-full md:w-[60%]'}`}>
+        <div className={` flex h-screen transition-all duration-500 ease-in-out ${open ? ' w-full md:w-[80%]' : ' w-full md:w-[60%]'}`}>
 
         <Center handlePlay={handlePlay} handleSidebarClick={handleSidebarClick} handlePlaylistClick={handlePlaylistClick}/>
         </div>
-        <div className={`md:block   ${openPlaylist ? ' w-full absolute top-0 right-0 z-50 block' : 'md:w-[20%] '}`}>
+        <div className={`md:block  transition-all duration-500 ease-in-out ${openPlaylist ? ' w-full absolute top-0 right-0 z-50 block' : 'md:w-[20%] '}`}>
 
         <div className='flex '>
    

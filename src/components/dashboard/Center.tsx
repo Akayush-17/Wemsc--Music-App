@@ -12,7 +12,7 @@ interface PlaylistProps {
 const Center: React.FC<PlaylistProps> = ({ handlePlaylistClick, handleSidebarClick, handlePlay}) => {
   const [searchQuery, setSearchQuery] = useState('');
   return (
-    <div className='flex flex-col w-full bg-[#18191b] px-4 md:px-6'>
+    <div className='flex flex-col w-full bg-[#18191b] px-4 md:px-6 '>
         <Navigation searchQuery={searchQuery}
         setSearchQuery={setSearchQuery} handleSidebarClick={handleSidebarClick} handlePlaylistClick={handlePlaylistClick}/>
         <div className='overflow-scroll no-scrollbar overflow-x-hidden'>
