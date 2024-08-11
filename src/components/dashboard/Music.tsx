@@ -1,5 +1,5 @@
 'use client'
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import Sidebar from './Sidebar'
 import Playlist from './Playlist'
 import Player from './Player'
@@ -8,12 +8,23 @@ import CurrentSong from './CurrentSong'
 import openmenu from '../../../public/open-line-svgrepo-com.svg'
 import Image from 'next/image'
 import right from "../../../public/right-2-svgrepo-com.svg";
+import logo from "../../../public/Untitled design (6).png";
 
 const Music = () => {
   const [open, setOpen] = useState(false);
   const [openPlaylist, setOpenPlaylist] = useState(false);
   const [openSidebar, setSidebar] = useState(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+
+    return () => clearTimeout(timer); 
+  }, []);
+
     const handleSidebar = () => {
         setOpen(!open)
     }
@@ -23,6 +34,14 @@ const Music = () => {
     }
     const handleSidebarClick = () => {
       setSidebar(!openSidebar)
+    }
+
+    if (loading) {
+      return (
+        <div className="flex items-center justify-center h-screen w-screen bg-black">
+          <Image src={logo} className="animate-spin h-12 w-12" alt="Loading..." />
+        </div>
+      );
     }
   return (
     <div className='flex relative h-screen flex-col   w-screen overflow-x-clip'>
