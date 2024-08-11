@@ -137,7 +137,7 @@ const Player: React.FC<PlayerProps> = ({play}) => {
     <div className="text-white px-6 w-screen flex items-center  py-6  bg-black">
       <audio ref={audioRef} src="/music/BYE.mp3" />
       <div className=" flex md:flex-row flex-col md:w-[20%] w-[5%] items-center gap-4  ">
-        <div className="md:block hidden">
+        <div className="lg:block hidden">
           <div> Bye Bye Bye</div>
           <div>Deadpool & Wolverine</div>
         </div>
@@ -170,7 +170,7 @@ const Player: React.FC<PlayerProps> = ({play}) => {
           </svg>
         </div>
       </div>
-      <div className="md:w-[60%] w-full  ">
+      <div className="lg:w-[60%] w-full  ">
         <div className=" flex flex-col">
           <div className="flex justify-center gap-4">
             <button>
@@ -240,13 +240,13 @@ const Player: React.FC<PlayerProps> = ({play}) => {
             step="0.01"
             value={volume}
             onChange={handleVolumeChange}
-            className="w-full md:block hidden"
+            className="w-full lg:block hidden"
           />
           {/* <div className="h-1 w-full bg-neutral-200 dark:bg-neutral-600">
               <div className="h-1 bg-blue-500" style={{ width: "45%" }}></div>
             </div> */}
         </div>
-        <div className="md:block hidden">
+        <div className="lg:block hidden">
           <svg
             width="25px"
             height="25px"
@@ -262,10 +262,10 @@ const Player: React.FC<PlayerProps> = ({play}) => {
             />
           </svg>
         </div>
-        <div className="md:block hidden">
+        <div className="lg:block hidden">
           <Image src={device} alt="device" />
         </div>
-        <div className="md:block hidden">
+        <div className="lg:block hidden">
           <Image src={share} alt="device" />
         </div>
       </div>

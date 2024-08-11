@@ -15,7 +15,11 @@ interface PlaylistmenuProps {
   return (
     <div className="w-full flex mt-6 gap-6 justify-center items-center">
       <div className="w-1/8 flex gap-2 ">
-        <button onClick={handleSidebarClick}>
+      <div className="lg:block hidden ">
+
+      <Image  src={left} alt="left" />{" "}
+      </div>
+        <button className="lg:hidden block" onClick={handleSidebarClick}>
           <Image src={left} alt="left" />{" "}
         </button>
         <div>
@@ -51,8 +55,8 @@ interface PlaylistmenuProps {
           </button>
         </div>
       </div>
-      <button  className="w-1/8 md:block hidden"> <Image src={dots} alt="menu"/> </button>
-      <button  onClick={handlePlaylistClick} className="w-1/8 md:hidden block"><Image src={menu}  alt="menu"/>  </button>
+      <button  className="w-1/8 lg:block hidden"> <Image src={dots} alt="menu"/> </button>
+      <button  onClick={handlePlaylistClick} className="w-1/8 lg:hidden block"><Image src={menu}  alt="menu"/>  </button>
     </div>
   );
 };

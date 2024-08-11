@@ -33,10 +33,10 @@ const Sidebar: React.FC<SidebarProps> = ({ handleSidebar, handleSidebarClick }) 
     <div className={`bg-[#101011]  h-full py-8 px-6`}>
       <div className="flex justify-between items-center">
         <Image src={logo} className="h-10 w-10" alt="logo" />
-        <button className="md:block hidden" onClick={handleSidebar}>
+        <button className="lg:block hidden" onClick={handleSidebar}>
           <Image src={left} alt="menu" />
         </button>
-        <button className="md:hidden block" onClick={handleSidebarClick}>
+        <button className="lg:hidden block" onClick={handleSidebarClick}>
           <Image src={left} alt="menu" />
         </button>
       </div>

@@ -84,7 +84,7 @@ const Playlist: React.FC<PlaylistProp> = ({ handlePlaylistClick, handlePlay }) =
           <div className="flex gap-2">
             <Image src={notification} alt="notification" />
             <Image src={downarrow} alt="arrow" />
-            <button className="md:hidden block" onClick={handlePlaylistClick}>
+            <button className="lg:hidden block" onClick={handlePlaylistClick}>
               <Image src={right} alt="right" />
             </button>
           </div>
